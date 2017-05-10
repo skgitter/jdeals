@@ -14,24 +14,21 @@
 'use strict';
 
 const express = require('express');
-
 const app = express();
 
-// [START hello_world]
-// Say hello!
+app.use(express.static(__dirname+'/public'));
+
+
 app.get('/', (req, res) => {
-  res.status(200).send('Welcome to jhapatta deals..');
+  res.render("index.js");
 });
-// [END hello_world]
+
 
 if (module === require.main) {
-  // [START server]
-  // Start the server
   const server = app.listen(process.env.PORT || 8081, () => {
     const port = server.address().port;
     console.log(`App listening on port ${port}`);
   });
-  // [END server]
 }
 
 module.exports = app;
