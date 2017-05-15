@@ -27,7 +27,10 @@
     ]
   },
   "dependencies": {
-    "express": "~4.15.2"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mustache": "^2.3.0",
+    "stache": "^0.1.0"
   },
   "devDependencies": {
     "ava": "~0.19.1",

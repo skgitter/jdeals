@@ -13,16 +13,33 @@
 
 'use strict';
 
-const express = require('express');
-const app = express();
+var express = require('express');
+var path = require('path');
+var bodyParser = require('body-parser');
 
-app.use(express.static(__dirname+'/public'));
+var app = express();
 
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public/');
+app.engine('html', require('ejs').renderFile);
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+
+//app.register(".mustache", require('stache'));
+
+//app.use(express.static(__dirname+'/public'));
 
 app.get('/', (req, res) => {
-  res.render("index.js");
+  res.render("index.html");
 });
 
+app.get('/claim', (req, res) => {
+  res.render("contact_us.html");
+});
 
 if (module === require.main) {
   const server = app.listen(process.env.PORT || 8081, () => {

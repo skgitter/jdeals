@@ -88,10 +88,10 @@
 		jQuery.scrollTo("#portfolio", 1000, { offset:-(jQuery('#header .top').height()), axis:'y' });
 	});
 
-	jQuery('.nav > li > a').click(function(e){
+	/*jQuery('.nav > li > a').click(function(e){
 		e.preventDefault();
 		jQuery.scrollTo(jQuery(this).attr('href'), 400, { offset:-(jQuery('#header .top').height()), axis:'y' });
-	})
+	})*/
 
 	jQuery(window).scroll( function() {
 	   //setHeaderBackground();
